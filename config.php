@@ -4,9 +4,9 @@ $databaseName = 'pemrograman_uas';
 $databaseUsername = 'root';
 $databasePassword = '';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+$mysqli = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
-if (!$mysqli) {
-    die("Koneksi ke database gagal: " . mysqli_connect_error());
+if ($mysqli->connect_error) {
+    die("Koneksi gagal: " . $mysqli->connect_error);
 }
 ?>
